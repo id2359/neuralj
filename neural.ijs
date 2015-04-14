@@ -1,32 +1,30 @@
-neuron =: dyad define
-    weights=. }: x
-    threshold=. {: x
-    (>&threshold) +/ weights * y
-)
+NB. step function
+t100 =: >&100
 
+NB. weights
+w1 =: 2 4 5
+w2 =: 5 10 0
 
-neuron_wrong =:(> & ({: @ [)) @  +/ @    ( (}: @ [) * ])
+NB. sigmoid function
+sigmoid =: 3 : '% <: ^ _1 * y'
 
-w1 =: 1 2 3
-t1 =: 10
-n1 =: (w1,t1)&neuron
-t2 =: 1000
-w2 =: 10 20 30
-n2 =: (w2,t2)&neuron
+NB. make a neuron via a conjunction
+neuron =: 2 : 'u +/ n * y'
 
-network =: n1`n2
+NB. some test neurons
+n1 =: t100 neuron w1
+n2 =: sigmoid neuron w1
+n3 =: sigmoid neuron w2
 
-input =: 22 44 1
-
+NB. pass a moun to a gerund
 feed =: `:0
 
-m1 =: (w1,t1)&neuron_wrong
+NB. contruct a layer as a gerund of neuron verbs
+layer1 =: n1`n2`n3
 
-result1 =: network feed input
+NB. helper function to pass an input to the layer
+accept =: 3 : 'layer1 feed y'
 
-
-
-
-
+accept 1 2 3
 
 
