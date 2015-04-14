@@ -16,10 +16,10 @@ n1 =: t100 neuron w1
 n2 =: sigmoid neuron w1
 n3 =: sigmoid neuron w2
 
-NB. pass a moun to a gerund
+NB. pass a noun to a gerund
 feed =: `:0
 
-NB. contruct a layer as a gerund of neuron verbs
+NB. construct a layer as a gerund of neuron verbs
 layer1 =: n1`n2`n3
 
 NB. helper function to pass an input to the layer
