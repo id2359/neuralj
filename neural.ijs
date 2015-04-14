@@ -5,7 +5,7 @@ neuron =: dyad define
 )
 
 
-neuron_wrong =:(> & ({: @ [)) +/ @    ( (}: @ [) * ])
+neuron_wrong =:(> & ({: @ [)) @  +/ @    ( (}: @ [) * ])
 
 w1 =: 1 2 3
 t1 =: 10
@@ -20,7 +20,9 @@ input =: 22 44 1
 
 feed =: `:0
 
-result =: network feed input
+m1 =: (w1,t1)&neuron_wrong
+
+result1 =: network feed input
 
 
 
