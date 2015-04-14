@@ -21,10 +21,9 @@ feed =: `:0
 
 NB. construct a layer as a gerund of neuron verbs
 layer1 =: n1`n2`n3
+layer2 =: 10 # layer1
 
-NB. helper function to pass an input to the layer
-accept =: 3 : 'layer1 feed y'
+layer2 feed 1 2 3
 
-accept 1 2 3
 
 
