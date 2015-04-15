@@ -25,5 +25,10 @@ layer2 =: 10 # layer1
 
 layer2 feed 1 2 3
 
+network =: dyad define
+    layers=.x NB. boxed list of layers
+    input=.y
+)    
+
 
 
